@@ -17,7 +17,8 @@ const Ideas = () => {
     idea: ''
   });
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxxvT9GmA9baFpjnVYEwbDGeOxR9_RlTfiz7r1DZBUswB6462OAn1SqcE64XXs791g9bw/exec";
+  // const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxxvT9GmA9baFpjnVYEwbDGeOxR9_RlTfiz7r1DZBUswB6462OAn1SqcE64XXs791g9bw/exec";
+  const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
