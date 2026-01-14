@@ -158,7 +158,9 @@ const Navbar = () => {
             {/* Logo Section */}
             <Link to="/" className="flex items-center gap-2 group shrink-0">
               <div className="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center text-white ">
-                <img src='src\assets\logos\iglogo_shubhama_git.png'/>
+                {/* <img src='src\assets\logos\iglogo_shubhama_git.png'/>  ---- remove the comment of this line when the site is on localhost - for on system debugging/development */}
+                <img src='IG/public/ig_logo_shubhama._git.png'/>  
+                {/* comment the above line if running the site on localhost */}
               </div>
               <span className="text-xl font-black tracking-tighter text-brand-black">
                 INNOVATION <span className="text-brand-blue font-light">GARAGE</span>

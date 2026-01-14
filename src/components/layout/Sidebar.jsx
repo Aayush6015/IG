@@ -109,7 +109,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed right-0 top-0 h-full w-80 z-[70] p-8 
+            className="fixed right-0 top-0 h-full w-68 z-[70] p-8 
                        bg-brand-black/80 backdrop-blur-2xl border-l border-white/10 shadow-2xl"
           >
             {/* Close Button on Top RIGHT */}
@@ -129,7 +129,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-bold text-brand-white hover:text-brand-yellow transition-colors flex flex-row-reverse items-center justify-between group"
+                  className="text-xl font-bold text-brand-white hover:text-brand-yellow transition-colors flex flex-row-reverse items-center justify-between group"
                 >
                   {link.name}
                   <motion.span 
