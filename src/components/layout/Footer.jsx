@@ -1,8 +1,76 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <footer className="bg-brand-black text-white pt-20 pb-10 px-6 border-t-2 border-brand-magenta">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+          
+          {/* Brand */}
+          <div className="col-span-1">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="bg-brand-orange rounded p-1">
+                 {/* Simple icon placeholder or use logo */}
+                 <span className="text-brand-black font-bold">IG</span>
+              </div>
+              <h3 className="text-white font-bold text-2xl font-funky">INNOVATION_GARAGE</h3>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 font-display">
+              Nurturing the next generation of entrepreneurs and innovators within our college ecosystem.
+            </p>
+          </div>
+
+          {/* Links */}
+          <div>
+            <h4 className="text-brand-lavender font-bold mb-6 font-pixel text-lg uppercase tracking-wider">Navigation</h4>
+            <ul className="flex flex-col gap-3">
+              <li><Link to="/" onClick={scrollToTop} className="text-gray-400 hover:text-brand-orange transition-colors text-sm font-display">Home</Link></li>
+              <li><Link to="/ideas" onClick={scrollToTop} className="text-gray-400 hover:text-brand-orange transition-colors text-sm font-display">Register Idea</Link></li>
+              <li><Link to="/events" onClick={scrollToTop} className="text-gray-400 hover:text-brand-orange transition-colors text-sm font-display">Events</Link></li>
+              <li><Link to="/contact" onClick={scrollToTop} className="text-gray-400 hover:text-brand-orange transition-colors text-sm font-display">Our Team</Link></li>
+            </ul>
+          </div>
+
+           {/* Newsletter / Contact - Reused from previous or generic */}
+          <div>
+            <h4 className="text-brand-lavender font-bold mb-6 font-pixel text-lg uppercase tracking-wider">Connect</h4>
+            <div className="flex gap-4">
+               {/* Add social links here if you have them, otherwise styled placeholders */}
+               <a href="#" className="w-10 h-10 border border-gray-600 flex items-center justify-center rounded-full hover:bg-brand-orange hover:text-black transition-all">Li</a>
+               <a href="#" className="w-10 h-10 border border-gray-600 flex items-center justify-center rounded-full hover:bg-brand-orange hover:text-black transition-all">Ig</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 font-pixel uppercase tracking-wide">
+          <p className="text-gray-500 text-xs">© {new Date().getFullYear()} Innovation Garage. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+
 // import React from 'react';
 // import { Link } from 'react-router-dom';
-// import { Instagram, Linkedin, Rocket } from 'lucide-react';
+// import { Instagram, Linkedin } from 'lucide-react';
 
 // const Footer = () => {
+//   // Helper function to handle the scroll
+//   const scrollToTop = () => {
+//     window.scrollTo({
+//       top: 0,
+//       behavior: 'smooth' // 'smooth' for a nice glide, 'auto' for instant jump
+//     });
+//   };
+
 //   return (
 //     <footer className="bg-brand-black text-brand-white pt-16 pb-8">
 //       <div className="max-w-7xl mx-auto px-6">
@@ -10,10 +78,9 @@
 //           {/* Brand Info */}
 //           <div className="m-auto justify-items-center space-y-4">
 //             <div className="flex items-center gap-2">
-//               {/* <Rocket className="text-brand-blue" size={24} /> */}
-//               <span className="text-3xl  font-bold">Innovation Garage</span>
+//               <span className="text-3xl font-bold">Innovation Garage</span>
 //             </div>
-//             <p className="text-gray-400 max-w-sm">
+//             <p className="text-gray-400 max-w-sm text-center">
 //               Nurturing the next generation of entrepreneurs and innovators within our college ecosystem.
 //             </p>
 //           </div>
@@ -22,10 +89,26 @@
 //           <div className='m-auto justify-items-center'>
 //             <h4 className="text-2xl font-bold mb-6 text-brand-yellow">Explore</h4>
 //             <ul className="justify-items-center space-y-3">
-//               <li><Link to="/" className="text-gray-300 hover:text-brand-blue transition-colors">Home</Link></li>
-//               <li><Link to="/ideas" className="text-gray-300 hover:text-brand-blue transition-colors">Register Idea</Link></li>
-//               <li><Link to="/events" className="text-gray-300 hover:text-brand-blue transition-colors">Events</Link></li>
-//               <li><Link to="/contact" className="text-gray-300 hover:text-brand-blue transition-colors">Our Team</Link></li>
+//               <li>
+//                 <Link to="/" onClick={scrollToTop} className="text-gray-300 hover:text-brand-blue transition-colors">
+//                   Home
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link to="/ideas" onClick={scrollToTop} className="text-gray-300 hover:text-brand-blue transition-colors">
+//                   Register Idea
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link to="/events" onClick={scrollToTop} className="text-gray-300 hover:text-brand-blue transition-colors">
+//                   Events
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link to="/contact" onClick={scrollToTop} className="text-gray-300 hover:text-brand-blue transition-colors">
+//                   Our Team
+//                 </Link>
+//               </li>
 //             </ul>
 //           </div>
 
@@ -52,81 +135,3 @@
 // };
 
 // export default Footer;
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Instagram, Linkedin } from 'lucide-react';
-
-const Footer = () => {
-  // Helper function to handle the scroll
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // 'smooth' for a nice glide, 'auto' for instant jump
-    });
-  };
-
-  return (
-    <footer className="bg-brand-black text-brand-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand Info */}
-          <div className="m-auto justify-items-center space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="text-3xl font-bold">Innovation Garage</span>
-            </div>
-            <p className="text-gray-400 max-w-sm text-center">
-              Nurturing the next generation of entrepreneurs and innovators within our college ecosystem.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div className='m-auto justify-items-center'>
-            <h4 className="text-2xl font-bold mb-6 text-brand-yellow">Explore</h4>
-            <ul className="justify-items-center space-y-3">
-              <li>
-                <Link to="/" onClick={scrollToTop} className="text-gray-300 hover:text-brand-blue transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/ideas" onClick={scrollToTop} className="text-gray-300 hover:text-brand-blue transition-colors">
-                  Register Idea
-                </Link>
-              </li>
-              <li>
-                <Link to="/events" onClick={scrollToTop} className="text-gray-300 hover:text-brand-blue transition-colors">
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" onClick={scrollToTop} className="text-gray-300 hover:text-brand-blue transition-colors">
-                  Our Team
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Socials */}
-          <div className='m-auto justify-items-center'>
-            <h4 className="text-2xl font-bold mb-6 text-brand-yellow">Connect</h4>
-            <div className="flex gap-4">
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue transition-all">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue transition-all">
-                <Instagram size={20} />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Innovation Garage. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
